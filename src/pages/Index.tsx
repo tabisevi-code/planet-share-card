@@ -19,17 +19,23 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
-      {/* Background stars effect */}
-      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background" />
+    <div className="min-h-screen bg-background flex items-center justify-center p-4 overflow-hidden">
+      {/* Enhanced background with multiple layers */}
+      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/30 via-accent/10 to-background" />
+      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-secondary/20 via-transparent to-transparent" />
       
-      <div className="relative z-10 text-center space-y-8">
-        <div className="space-y-4">
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
+      {/* Animated gradient orbs */}
+      <div className="fixed top-20 left-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
+      <div className="fixed bottom-20 right-20 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+      
+      <div className="relative z-10 text-center space-y-10">
+        <div className="space-y-6 animate-slide-bounce">
+          <h1 className="text-6xl md:text-7xl font-black bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent drop-shadow-[0_0_40px_hsl(280_95%_65%/0.5)] animate-glow-pulse">
             Planet Discovery
           </h1>
-          <p className="text-xl text-muted-foreground max-w-md mx-auto">
-            Share your cosmic discovery with the world
+          <p className="text-xl md:text-2xl text-foreground max-w-md mx-auto font-semibold">
+            Share your <span className="text-accent">cosmic discovery</span> with the world ✨
           </p>
         </div>
 
@@ -37,13 +43,16 @@ const Index = () => {
           <DialogTrigger asChild>
             <Button 
               size="lg"
-              className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity shadow-[0_0_30px_rgba(168,85,247,0.5)] group"
+              className="relative px-8 py-6 text-lg font-black bg-gradient-to-r from-primary via-accent to-secondary hover:scale-110 transition-all duration-300 shadow-[0_0_60px_hsl(280_95%_65%/0.8)] hover:shadow-[0_0_80px_hsl(280_95%_65%/1)] group overflow-hidden border-2 border-accent/50 animate-slide-bounce"
+              style={{ animationDelay: '0.2s' }}
             >
-              <Sparkles className="w-5 h-5 mr-2 group-hover:animate-spin" />
-              View Discovery Card
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine bg-[length:200%_100%]" />
+              <Sparkles className="w-6 h-6 mr-2 group-hover:rotate-180 transition-transform duration-500 relative z-10" />
+              <span className="relative z-10">View Discovery Card</span>
+              <Sparkles className="w-6 h-6 ml-2 group-hover:rotate-180 transition-transform duration-500 relative z-10" />
             </Button>
           </DialogTrigger>
-          <DialogContent className="max-w-lg bg-background/95 backdrop-blur-xl border-primary/30">
+          <DialogContent className="max-w-lg bg-background/90 backdrop-blur-2xl border-2 border-primary/50 shadow-[0_0_100px_hsl(280_95%_65%/0.6)]">
             <DiscoveryCard
               planetName={planetData.planetName}
               stats={planetData.stats}
@@ -51,8 +60,8 @@ const Index = () => {
           </DialogContent>
         </Dialog>
 
-        <p className="text-sm text-muted-foreground">
-          Click the button to see your shareable discovery card
+        <p className="text-sm text-muted-foreground animate-pulse">
+          🚀 Click the button to reveal your cosmic achievement 🌟
         </p>
       </div>
     </div>

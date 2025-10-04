@@ -8,53 +8,57 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 240 20% 8%;
+    --background: 240 25% 6%;
     --foreground: 210 40% 98%;
 
-    --card: 240 18% 12%;
+    --card: 240 20% 10%;
     --card-foreground: 210 40% 98%;
 
     --popover: 240 18% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 267 84% 65%;
+    --primary: 280 95% 65%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 217 84% 60%;
+    --secondary: 190 95% 60%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 240 15% 20%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 280 90% 70%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 45 100% 60%;
+    --accent-foreground: 240 25% 6%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 240 15% 20%;
+    --border: 280 50% 30%;
     --input: 240 15% 20%;
-    --ring: 267 84% 65%;
+    --ring: 280 95% 65%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Space theme colors */
-    --cosmic-purple: 267 84% 65%;
-    --cosmic-blue: 217 84% 60%;
-    --cosmic-pink: 320 85% 70%;
-    --cosmic-glow: 280 90% 70%;
+    /* Enhanced space theme colors */
+    --cosmic-purple: 280 95% 65%;
+    --cosmic-blue: 190 95% 60%;
+    --cosmic-pink: 320 95% 70%;
+    --cosmic-gold: 45 100% 60%;
+    --cosmic-cyan: 180 100% 60%;
     
-    /* Gradients */
-    --gradient-cosmic: linear-gradient(135deg, hsl(267 84% 65%), hsl(217 84% 60%));
-    --gradient-card: linear-gradient(180deg, hsl(240 18% 15%), hsl(240 18% 10%));
-    --gradient-glow: radial-gradient(circle at center, hsl(267 84% 65% / 0.3), transparent 70%);
+    /* Vibrant gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(280 95% 65%), hsl(320 95% 70%), hsl(190 95% 60%));
+    --gradient-card: linear-gradient(135deg, hsl(240 20% 12%), hsl(280 30% 15%), hsl(240 20% 10%));
+    --gradient-glow: radial-gradient(circle at center, hsl(280 95% 65% / 0.4), hsl(320 95% 70% / 0.3), transparent 70%);
+    --gradient-shine: linear-gradient(45deg, transparent, hsl(280 95% 85% / 0.3), transparent);
     
-    /* Shadows */
-    --shadow-card: 0 10px 40px -10px hsl(267 84% 45% / 0.5);
-    --shadow-glow: 0 0 60px hsl(267 84% 65% / 0.4);
+    /* Dramatic shadows */
+    --shadow-card: 0 20px 60px -15px hsl(280 95% 45% / 0.7), 0 0 80px hsl(320 95% 60% / 0.4);
+    --shadow-glow: 0 0 100px hsl(280 95% 65% / 0.6), 0 0 60px hsl(320 95% 70% / 0.4);
+    --shadow-mega: 0 30px 90px -20px hsl(280 95% 45% / 0.9), 0 0 120px hsl(280 95% 60% / 0.5);
     
     /* Animations */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 }
 
